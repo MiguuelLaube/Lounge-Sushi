@@ -108,3 +108,9 @@
 }
 
 @media (min-width: 901px) { .swipe-hint { display: none; } }
+
+/* o carrossel dos pratos também é um .wrap: no celular ele ocupa a largura toda da tela */
+@media (max-width: 900px) {
+  .trio-inner.wrap { width: 100%; margin: 0; padding: 0 20px 12px; scroll-padding: 0 20px; }
+  .favs-grid { scroll-padding: 0 20px; }
+}
