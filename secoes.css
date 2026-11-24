@@ -61,7 +61,7 @@
 .book-wrap { margin: 0 0 40px; }
 .book-hint { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--cinza); font-size: 12px; margin-bottom: 16px; }
 .book-hint svg { width: 22px; height: 22px; color: var(--branco); }
-.book { position: relative; height: min(74vh, 620px); perspective: 1800px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.book { position: relative; height: clamp(480px, 70svh, 600px); perspective: 1800px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .bk-page { position: absolute; inset: 0; transform-origin: 0 50%; transform-style: preserve-3d; --turn: 0; }
 .bk-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 3px 10px 10px 3px; overflow: hidden; }
 .bk-front {
@@ -80,7 +80,8 @@
 .bk-page.flat .bk-back { display: none; }
 .bk-back { transform: rotateY(180deg); background: linear-gradient(270deg, #d4c9b5, #eee5d2 20%, #e9dfcb); box-shadow: inset -8px 0 14px -8px rgba(0,0,0,.4); }
 .bk-back::before { content: "寿司"; position: absolute; inset: 0; display: grid; place-items: center; writing-mode: vertical-rl; font: 400 90px/1 var(--pincel); color: rgba(120,20,20,.12); }
-.bk-in { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; padding: 22px 22px 46px 30px; }
+.bk-in { position: absolute; inset: 0; overflow: hidden; padding: 22px 22px 46px 30px; }
+.bk-page h3 small { font-size: 11px; font-weight: 600; color: #8a7765; text-transform: none; margin-left: 6px; }
 .bk-in::-webkit-scrollbar { width: 0; }
 .bk-kanji { position: absolute; right: 12px; top: 10px; writing-mode: vertical-rl; font: 400 58px/1 var(--pincel); color: rgba(215,20,30,.14); pointer-events: none; }
 .bk-page h3 { font: 800 20px/1.1 var(--sans); text-transform: uppercase; color: #b80d16; padding: 0 0 8px; border: 0; border-bottom: 2px solid #1c1410; margin-bottom: 6px; }

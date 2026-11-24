@@ -90,7 +90,9 @@
   const count = document.getElementById('bookCount');
   const KANJI = { 'Combinados': '盛', 'Hots': '揚', 'Joy e Dragon': '龍', 'Temaki': '巻', 'Niguiri': '握', 'Hossomaki': '細', 'Sashimi': '刺', 'Entradas': '前', 'Pastéis Harumaki': '包', 'Yakissoba': '麺', 'Culinária chinesa': '中', 'Tepan': '鉄', 'Sobremesa': '甘', 'Monte seu poke': '丼' };
 
-  let pages = [], names = [], idx = 0, built = false, busy = false;
+  let pages = [], names = [], idx = 0, built = false, busy = false, current = null;
+  // um gesto novo conclui na hora a virada que ainda estiver acontecendo
+  const settle = () => { if (current) current.progress(1); };
 
   const logoHTML = document.querySelector('.logo-word').outerHTML;
 
@@ -101,26 +103,43 @@
     return p;
   }
 
+  // Monta o livro: cada categoria ocupa quantas páginas precisar, sem rolagem
+  // dentro da página (assim o arrasto vertical sempre rola o site).
   function build() {
-    const cats = catOrder; // ordem original do cardápio
-    const total = cats.length;
-    pages = []; names = [];
-    pages.push(face(`<div class="bk-cover-in">${logoHTML}<p>Sushi Bar · Cardápio</p><div class="bk-sun"><span>品書</span></div><p>${total} categorias · preços em reais</p><span class="swipe">‹ deslize para abrir</span></div>`, 'bk-cover'));
-    names.push('Capa');
-    cats.forEach((cat, i) => {
-      const clone = cat.cloneNode(true);
-      clone.removeAttribute('id');
-      clone.querySelectorAll('[id]').forEach((n) => n.removeAttribute('id'));
-      clone.removeAttribute('aria-labelledby');
-      const name = cat.querySelector('h3').textContent.trim();
-      pages.push(face(`<div class="bk-in"><span class="bk-kanji" aria-hidden="true">${KANJI[name] || '品'}</span>${clone.innerHTML}</div><div class="bk-foot"><span>Lounge Sushi Bar</span><span>${i + 1} / ${total}</span></div>`));
-      names.push(name);
-    });
-    pages.push(face(`<div class="bk-cover-in"><div class="bk-sun"><span>寿司</span></div><p>Escolheu?</p><a class="btn-line btn-line-red" href="https://wa.me/5582991163767">Pedir pelo WhatsApp</a><p>(82) 99116-3767</p></div>`, 'bk-cover bk-last'));
-    names.push('Contracapa');
-
+    const total = catOrder.length;
     book.innerHTML = '';
-    pages.forEach((p, i) => { p.style.zIndex = pages.length - i; p.classList.add('flat'); book.appendChild(p); });
+    pages = []; names = [];
+    const add = (p, name) => { book.appendChild(p); pages.push(p); names.push(name); return p; };
+
+    add(face(`<div class="bk-cover-in">${logoHTML}<p>Sushi Bar · Cardápio</p><div class="bk-sun"><span>品書</span></div><p>${total} categorias · preços em reais</p><span class="swipe">‹ deslize para abrir</span></div>`, 'bk-cover'), 'Capa');
+
+    catOrder.forEach((cat) => {
+      const name = cat.querySelector('h3').textContent.trim();
+      const note = cat.querySelector('.menu-note');
+      const items = [...cat.querySelectorAll('.menu-list > li')];
+      let i = 0, part = 0;
+      while (i < items.length) {
+        const p = add(face(`<div class="bk-in"><span class="bk-kanji" aria-hidden="true">${KANJI[name] || '品'}</span><h3>${name}${part ? ' <small>continuação</small>' : ''}</h3>${part === 0 && note ? note.outerHTML : ''}<ul class="menu-list"></ul></div><div class="bk-foot"><span>Lounge Sushi Bar</span><span class="bk-num"></span></div>`), name);
+        const inner = p.querySelector('.bk-in'), ul = p.querySelector('ul');
+        let placed = 0;
+        while (i < items.length) {
+          ul.appendChild(items[i].cloneNode(true));
+          if (inner.scrollHeight > inner.clientHeight + 1 && placed > 0) { ul.lastChild.remove(); break; }
+          i++; placed++;
+        }
+        part++;
+      }
+    });
+
+    add(face(`<div class="bk-cover-in"><div class="bk-sun"><span>寿司</span></div><p>Escolheu?</p><a class="btn-line btn-line-red" href="https://wa.me/5582991163767">Pedir pelo WhatsApp</a><p>(82) 99116-3767</p></div>`, 'bk-cover bk-last'), 'Contracapa');
+
+    const inner = pages.length - 2;
+    pages.forEach((p, n) => {
+      p.style.zIndex = pages.length - n;
+      p.classList.add('flat');
+      const num = p.querySelector('.bk-num');
+      if (num) num.textContent = `${n} / ${inner}`;
+    });
     idx = 0;
     built = true;
     refresh();
@@ -148,21 +167,21 @@
     const from = hasGsap && !p.classList.contains('flat') ? gsap.getProperty(p, 'rotationY') : 0;
     if (!hasGsap) { setTurn(p, to); finish(); return; }
     const o = { d: from };
-    gsap.to(o, {
-      d: to, duration: 0.85 * Math.max(0.35, Math.abs(to - from) / 180), ease: 'power2.inOut',
+    current = gsap.to(o, {
+      d: to, duration: 0.6 * Math.max(0.4, Math.abs(to - from) / 180), ease: 'power2.inOut',
       onUpdate: () => setTurn(p, o.d),
       onComplete: finish,
     });
     function finish() {
       if (to <= -179) p.style.visibility = 'hidden';
-      busy = false;
+      busy = false; current = null;
       done && done();
       refresh();
     }
   }
 
-  function next() { if (busy || idx >= pages.length - 1) return; const p = pages[idx]; animateTurn(p, -180, () => { idx++; refresh(); }); }
-  function prev() { if (busy || idx <= 0) return; const p = pages[idx - 1]; p.style.visibility = 'visible'; animateTurn(p, 0, () => { idx--; refresh(); }); }
+  function next() { settle(); if (idx >= pages.length - 1) return; const p = pages[idx]; animateTurn(p, -180, () => { idx++; refresh(); }); }
+  function prev() { settle(); if (idx <= 0) return; const p = pages[idx - 1]; p.style.visibility = 'visible'; animateTurn(p, 0, () => { idx--; refresh(); }); }
 
   function refresh() {
     btnPrev.disabled = idx === 0;
@@ -174,7 +193,7 @@
   // arrastar com o dedo: a página acompanha e vira de verdade
   let sx = 0, sy = 0, dragging = false, decided = false, target = null, dir = 0, W = 1;
   book.addEventListener('pointerdown', (e) => {
-    if (busy) return;
+    settle();
     sx = e.clientX; sy = e.clientY; dragging = true; decided = false; target = null; W = book.clientWidth;
   });
   book.addEventListener('pointermove', (e) => {
@@ -217,8 +236,8 @@
 
   function applyMode() {
     if (mq.matches) {
-      if (!built) build();
       wrap.hidden = false;
+      if (!built) build();
       menu.classList.add('has-book');
     } else {
       wrap.hidden = true;
@@ -227,6 +246,13 @@
     if (hasGsap) ScrollTrigger.refresh();
   }
   mq.addEventListener('change', applyMode);
+  let lastW = innerWidth, bt;
+  addEventListener('resize', () => {
+    if (innerWidth === lastW) return; // ignora a barra do navegador do celular aparecendo/sumindo
+    lastW = innerWidth; clearTimeout(bt);
+    bt = setTimeout(() => { if (mq.matches) build(); else built = false; }, 300);
+  });
+  document.fonts && document.fonts.ready.then(() => { if (mq.matches) build(); });
   applyMode();
 
   // links do topo para categorias abrem a página certa do livro no celular
