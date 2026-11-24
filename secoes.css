@@ -46,23 +46,6 @@
 .steps-list h3 { font: 800 14px/1.3 var(--sans); text-transform: uppercase; margin-bottom: 6px; }
 .steps-list p { color: var(--cinza); font-size: 13px; line-height: 1.55; }
 
-/* o salão */
-.salao { padding: 40px 0 120px; }
-.salao-inner { display: grid; grid-template-columns: 1.1fr 1fr .8fr; gap: 24px; align-items: start; }
-.salao figure { position: relative; margin: 0; overflow: hidden; }
-.salao figure img { width: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-.salao figure:hover img { transform: scale(1.04); }
-.salao figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 30px 14px 10px; font-size: 12px; font-style: italic; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
-.salao-a { grid-column: 1; grid-row: 1; }
-.salao-d { grid-column: 1; grid-row: 2; }
-.salao-d img { aspect-ratio: 4 / 3.2; object-position: 50% 0%; }
-.salao-a img { aspect-ratio: 3 / 2.05; object-position: top; }
-.salao-copy { position: relative; grid-column: 2 / span 2; grid-row: 1; padding: 10px 0 10px 10px; z-index: 0; }
-.salao-copy p { color: var(--cinza); font-size: 13px; line-height: 1.6; margin-bottom: 14px; max-width: 460px; }
-.kanji-salao { right: 0; top: -20px; font-size: 130px; color: #1c1c1c; z-index: -1; }
-.salao-b img { aspect-ratio: 4 / 3.2; object-position: 50% 15%; }
-.salao-c img { aspect-ratio: 4 / 3.2; object-position: 50% 62%; }
-
 /* dúvidas */
 .faq { padding: 20px 0 110px; }
 .faq-inner { display: grid; grid-template-columns: 320px 1fr; gap: 60px; }
@@ -129,16 +112,8 @@
   .favs { padding-top: 90px; }
   .favs-grid { grid-template-columns: 1fr; }
   .steps-list { grid-template-columns: 1fr; gap: 46px; }
-  .salao-inner { grid-template-columns: 1fr 1fr; }
-  .salao-copy { grid-column: 1 / -1; grid-row: 1; padding: 0; }
-  .salao-a { grid-row: auto; grid-column: 1 / -1; }
-  .salao-d { grid-row: auto; grid-column: 1 / -1; }
-  .salao-a img { aspect-ratio: 3 / 2.05; }
   .faq-inner { grid-template-columns: 1fr; gap: 10px; }
   .menu.has-book .menu-tabs, .menu.has-book .menu-cols, .menu.has-book .menu-showcase { display: none; }
-}
-@media (min-width: 901px) {
-  .salao-d img, .salao-b img, .salao-c img { aspect-ratio: auto; height: 300px; }
 }
 
 /* cardápio em duas colunas equilibradas (montadas pelo main.js) */

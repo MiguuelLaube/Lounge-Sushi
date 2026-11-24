@@ -45,7 +45,6 @@
     if (!reduce) {
       gsap.to('.kanji-hero', { yPercent: -25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
       gsap.fromTo('.kanji-band', { yPercent: -12 }, { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: true } });
-      gsap.fromTo('.kanji-salao', { yPercent: 20 }, { yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.salao', start: 'top bottom', end: 'bottom top', scrub: true } });
       gsap.utils.toArray('.birds').forEach((b, i) => {
         gsap.fromTo(b, { x: i % 2 ? 60 : -60, opacity: 0 }, { x: 0, opacity: 1, ease: 'power2.out', scrollTrigger: { trigger: b, start: 'top 95%', end: 'top 60%', scrub: 0.5 } });
       });
