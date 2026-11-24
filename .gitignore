@@ -3,3 +3,5 @@ Lounge Sushi.html
 *.tmp
 Thumbs.db
 .DS_Store
+.wrangler/
+node_modules/

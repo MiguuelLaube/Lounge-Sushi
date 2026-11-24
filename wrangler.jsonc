@@ -1,0 +1,10 @@
+{
+  // Site estático do Lounge Sushi Bar na Cloudflare (Workers com arquivos estáticos).
+  // Para publicar uma atualização: npx wrangler deploy
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lounge-sushi",
+  "compatibility_date": "2026-11-23",
+  "assets": {
+    "directory": "."
+  }
+}

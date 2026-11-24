@@ -1,0 +1,8 @@
+.git
+.claude
+.gitignore
+.assetsignore
+wrangler.jsonc
+Lounge Sushi.html
+node_modules
+.wrangler
