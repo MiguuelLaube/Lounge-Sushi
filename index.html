@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lounge Sushi Bar · São Miguel dos Campos</title>
+<meta name="description" content="Hots, temakis, joys, dragons e combinados em São Miguel dos Campos, Alagoas. Almoço, jantar e delivery pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Yuji+Syuku&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=51">
+<link rel="stylesheet" href="secoes.css?v=51">
+</head>
+<body>
+
+<!-- Ícones desenhados para o Lounge: traço branco de 2.4, detalhe vermelho do selo -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e1206"/><stop offset=".35" stop-color="#8a4421"/><stop offset=".55" stop-color="#a5582c"/><stop offset="1" stop-color="#3a1709"/>
+    </linearGradient>
+    <symbol id="stick" viewBox="0 0 640 24">
+      <path d="M0 2 L640 8.5 L640 15.5 L0 22 Z" fill="url(#wood)"/>
+      <rect x="22" y="2.4" width="12" height="19.4" fill="#d9a441"/><rect x="38" y="2.6" width="4" height="19" fill="#1a0b04"/>
+      <rect x="46" y="2.7" width="12" height="18.8" fill="#d9a441"/><rect x="62" y="2.9" width="3" height="18.4" fill="#1a0b04"/>
+      <path d="M0 2 L22 2.4 L22 21.8 L0 22 Z" fill="#1a0b04" opacity=".55"/>
+    </symbol>
+
+    <!-- bentô do almoço com hashi -->
+    <symbol id="i-bento" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="24" width="48" height="30" rx="4"/><path d="M32 24v30M8 38h24"/>
+        <path d="M14 18 46 6M18 21 50 9"/>
+      </g>
+      <circle cx="44" cy="39" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="44" cy="39" r="3" fill="#d7141e"/>
+      <path d="M13 46c3-3 6-3 9 0s6 3 8 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="20" cy="31" rx="7" ry="3.5" fill="#d7141e"/>
+    </symbol>
+    <!-- moto de entrega com a caixa do Lounge -->
+    <symbol id="i-moto" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="46" r="7"/><circle cx="50" cy="46" r="7"/>
+        <path d="M16 46h16l6-12h8l4 12M38 34l-4-10h-6M23 39h11"/>
+        <rect x="10" y="20" width="18" height="15" rx="2"/>
+        <path d="M2 26h4M0 32h6"/>
+      </g>
+      <circle cx="19" cy="27.5" r="4.6" fill="#d7141e"/><circle cx="19" cy="27.5" r="1.8" fill="currentColor"/>
+    </symbol>
+    <!-- hashi segurando um hot -->
+    <symbol id="i-pegar" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 10 40 34M4 18 40 38"/></g>
+      <circle cx="46" cy="42" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 2.2"/>
+      <circle cx="46" cy="42" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="46" cy="42" r="4" fill="#d7141e"/>
+    </symbol>
+    <!-- hot frito (borda crocante) -->
+    <symbol id="i-hot" viewBox="0 0 64 64">
+      <path d="M32 8l4 3 5-1 3 4 5 1 1 5 4 3-1 5 3 4-3 4 1 5-4 3-1 5-5 1-3 4-5-1-4 3-4-3-5 1-3-4-5-1-1-5-4-3 1-5-3-4 3-4-1-5 4-3 1-5 5-1 3-4 5 1z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="32" cy="32" r="13" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M26 30c2-4 9-5 12 0 2 4-3 8-7 7s-7-3-5-7z" fill="#d7141e"/>
+      <circle cx="23" cy="22" r="1.3" fill="currentColor"/><circle cx="43" cy="40" r="1.3" fill="currentColor"/><circle cx="40" cy="21" r="1.3" fill="currentColor"/>
+    </symbol>
+    <!-- temaki -->
+    <symbol id="i-temaki" viewBox="0 0 64 64">
+      <path d="M14 20 34 58 52 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M22 35l20-10M27 45l14-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 21c4-10 16-14 26-12 9 2 15 7 15 13-12 4-27 4-41-1z" fill="#d7141e"/>
+      <path d="M22 14c4 2 8 2 12 0M34 13c3 2 7 3 10 2" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/>
+    </symbol>
+    <!-- niguiri -->
+    <symbol id="i-niguiri" viewBox="0 0 64 64">
+      <path d="M10 40c0-8 10-12 22-12s22 4 22 12-10 10-22 10-22-2-22-10z" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M6 32c6-12 46-14 52-2-8 6-44 8-52 2z" fill="#d7141e"/>
+      <path d="M16 28c6 3 12 3 18 1M30 27c6 3 12 3 18 0" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/>
+      <path d="M28 26v24h8V26" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    </symbol>
+    <!-- joy (rolinho envolto em salmão com cream cheese) -->
+    <symbol id="i-joy" viewBox="0 0 64 64">
+      <path d="M14 26v20c0 5 8 9 18 9s18-4 18-9V26" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M14 34c6 4 30 4 36 0M14 42c6 4 30 4 36 0" stroke="#d7141e" stroke-width="3" fill="none"/>
+      <ellipse cx="32" cy="26" rx="18" ry="8" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M20 24c3-7 21-7 24 0-4 4-20 4-24 0z" fill="currentColor"/>
+      <circle cx="32" cy="17" r="3" fill="#d7141e"/>
+    </symbol>
+    <!-- poke -->
+    <symbol id="i-poke" viewBox="0 0 64 64">
+      <path d="M8 32h48c0 13-11 22-24 22S8 45 8 32z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M24 56h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <rect x="14" y="24" width="8" height="8" rx="1.5" fill="#d7141e"/><rect x="24" y="22" width="8" height="8" rx="1.5" fill="#d7141e" transform="rotate(12 28 26)"/>
+      <circle cx="38" cy="27" r="3.5" fill="currentColor"/><circle cx="46" cy="28" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M40 22 56 6M44 24 60 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <!-- maçarico / feito na hora -->
+    <symbol id="i-macarico" viewBox="0 0 64 64">
+      <path d="M8 50 26 32l6 6-18 18z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M26 32l5-5 6 6-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M37 27c2-8 10-8 12-16 6 6 8 18-2 24-4 2-9-2-10-8z" fill="#d7141e"/>
+      <path d="M42 28c1-3 4-4 5-7 2 3 2 8-1 9-2 1-4 0-4-2z" fill="currentColor"/>
+    </symbol>
+    <!-- barca de combinados -->
+    <symbol id="i-barca" viewBox="0 0 64 64">
+      <path d="M4 36h56l-8 14H12z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M52 36l6-14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="16" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="30" r="2.4" fill="#d7141e"/>
+      <circle cx="30" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="30" cy="30" r="2.4" fill="#d7141e"/>
+      <path d="M38 34c1-6 11-7 12 0z" fill="#d7141e"/>
+      <path d="M8 56c4-2 8-2 12 0s8 2 12 0 8-2 12 0 8 2 12 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <!-- relógio com ponteiros de hashi -->
+    <symbol id="i-relogio" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M32 12v3M32 49v3M12 32h3M49 32h3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M32 32 32 17M32 32 43 40" stroke="#d7141e" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="32" cy="32" r="3" fill="currentColor"/>
+    </symbol>
+    <!-- etiqueta de promoção -->
+    <symbol id="i-promo" viewBox="0 0 64 64">
+      <path d="M34 6h22v22L28 56 6 34z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="46" cy="16" r="4" fill="#d7141e"/>
+      <path d="M24 40l12-12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="25" cy="31" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="35" cy="41" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <!-- conversa de pedido -->
+    <symbol id="i-pedido" viewBox="0 0 64 64">
+      <path d="M10 12h44a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H28l-12 10v-10h-6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="22" cy="28" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="28" r="2" fill="#d7141e"/>
+      <path d="M32 24h14M32 32h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <!-- livro do cardápio -->
+    <symbol id="i-livro" viewBox="0 0 64 64">
+      <path d="M32 14c-6-4-16-5-24-3v38c8-2 18-1 24 3 6-4 16-5 24-3V11c-8-2-18-1-24 3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M32 14v38" stroke="currentColor" stroke-width="2.4"/>
+      <circle cx="20" cy="26" r="5" fill="#d7141e"/>
+      <path d="M38 22h12M38 30h12M38 38h8M14 36h10M14 42h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <!-- andorinha em pincel -->
+    <symbol id="i-ave" viewBox="0 0 60 30">
+      <path d="M2 20c10-5 18-5 26 2 1-9 10-17 30-20-12 6-18 13-20 22-4 2-9 2-12 0C21 18 13 17 2 20z" fill="currentColor"/>
+      <path d="M28 22c-4 3-9 5-14 6 4-2 7-4 9-7" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-seta" viewBox="0 0 16 16"><rect width="16" height="16" fill="#d7141e"/><path d="M5 11 11 5M6 5h5v5" stroke="#fff" stroke-width="1.8" fill="none"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="topbar-call" href="https://wa.me/5582991163767">Peça agora pelo WhatsApp · Telefone: (82) 99116-3767</a>
+    <a class="topbar-insta" href="https://www.instagram.com/loungesushii/"><svg aria-hidden="true"><use href="#i-insta"/></svg>Siga no <strong>Instagram</strong></a>
+    <a class="topbar-menu" href="#cardapio">Cardápio <span aria-hidden="true">▾</span></a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#inicio" aria-label="Lounge Sushi Bar, início">
+      <span class="logo-word">L<svg class="logo-o" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#fff"/><circle cx="20" cy="20" r="14" fill="#d7141e"/><circle cx="20" cy="20" r="6.5" fill="#fff"/><path d="M4 30 36 6M9 34 38 11" stroke="#e7b65c" stroke-width="2.4" stroke-linecap="round"/></svg>UNGE</span>
+      <span class="logo-sub"><b>SUSHI</b>BAR</span>
+    </a>
+    <div class="header-right">
+      <dl class="hours">
+        <div><dt>Almoço · segunda a sexta</dt><dd>11h às 15h</dd></div>
+        <div><dt>Jantar · terça a domingo</dt><dd>a partir das 18h</dd></div>
+      </dl>
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#mais-pedidos">Mais pedidos</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#como-pedir">Como pedir</a>
+        <a href="#salao">O salão</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="kanji kanji-hero" aria-hidden="true">和食</span>
+      <h1 class="hero-title reveal-load">Lounge <span class="red">Sushi</span> Bar</h1>
+      <p class="hero-sub reveal-load">em São Miguel dos Campos – sushi feito na hora</p>
+      <p class="reveal-load">Aproveite o melhor da culinária japonesa em Alagoas: hots crocantes, temakis, joys, dragons e combinados para dividir. No Lounge você almoça durante a semana, janta de terça a domingo ou recebe tudo em casa pelo WhatsApp.</p>
+      <p class="reveal-load">Tudo é preparado na hora, com salmão, camarão e cream cheese em quase todo prato. Dê uma olhada no nosso <a href="#cardapio">cardápio</a> e descubra o que tem por trás de um joy, um dragon ou um hot Furacão.</p>
+      <div class="hero-ctas reveal-load">
+        <a class="cta-box" href="#cardapio"><small>Bateu a fome?</small><strong>Ver <span class="red">cardápio</span></strong></a>
+        <span class="cta-seal" aria-hidden="true"><svg><use href="#i-pegar"/></svg></span>
+        <a class="cta-box" href="https://wa.me/5582991163767"><small>Quer pedir?</small><strong>Pedir no <span class="red">WhatsApp</span></strong></a>
+      </div>
+      <p class="hero-where reveal-load">Estamos em São Miguel dos Campos, Alagoas.</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="badges">
+        <a class="badge" href="#cardapio"><svg aria-hidden="true"><use href="#i-bento"/></svg><span>Almoço de<br><em>seg a sex</em></span><i aria-hidden="true">寿</i></a>
+        <a class="badge" href="https://wa.me/5582991163767"><svg aria-hidden="true"><use href="#i-moto"/></svg><span>Entregamos<br><em>na sua casa</em></span><i aria-hidden="true">司</i></a>
+      </div>
+      <figure class="hero-food">
+        <img src="img/cut/hots.webp" width="871" height="634" alt="Porção de hots empanados com cebolinha e gergelim">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA VERMELHA: o hot cai do céu e o hashi pega -->
+<section class="band" id="casa">
+  <span class="kanji kanji-band" aria-hidden="true">刺身</span>
+  <div class="band-sticks" id="bandSticks" aria-hidden="true">
+    <div class="catch-spot">
+      <div class="rig"><svg class="stick stick-top" viewBox="0 0 640 24" preserveAspectRatio="none"><use href="#stick"/></svg></div>
+      <span class="catch-shadow"></span>
+      <img class="band-piece" id="fallingHot" src="img/cut/hot-peca.webp" width="397" height="374" alt="">
+      <div class="rig"><svg class="stick stick-low" viewBox="0 0 640 24" preserveAspectRatio="none"><use href="#stick"/></svg></div>
+    </div>
+  </div>
+  <div class="wrap band-inner">
+    <div class="band-copy" data-reveal>
+      <p class="band-intro">Além do cardápio fixo, toda semana tem promoção nova.<br>Fique de olho no nosso Instagram para não perder nenhuma.</p>
+      <div class="band-heading">
+        <h2>Variedade e sabor<br>da culinária japonesa</h2>
+        <svg aria-hidden="true"><use href="#i-hot"/></svg>
+      </div>
+      <h3>No Lounge Sushi Bar você encontra:</h3>
+      <ul class="band-list">
+        <li>Cardápio completo, dos hots ao tepan</li>
+        <li>Almoço de segunda a sexta</li>
+        <li>Jantar de terça a domingo</li>
+        <li>Promoções novas toda semana</li>
+        <li>Temaki Dragon de salmão maçaricado</li>
+        <li>Combinados e barcas de até 100 peças</li>
+        <li>Yakissoba e culinária chinesa</li>
+        <li>Monte seu próprio poke</li>
+        <li>Delivery pelo WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRÊS COLUNAS -->
+<section class="trio">
+  <div class="wrap trio-inner">
+    <article class="trio-item" data-reveal>
+      <img class="cutout" src="img/cut/hots-plate.webp" width="450" height="286" loading="lazy" alt="Combinado de hots com cebolinha">
+      <p>Conheça os hots da casa: Dinamite, Philadelfia, Furacão, Doritos e até versões doces com Nutella.</p>
+      <span class="trio-line" aria-hidden="true"></span>
+      <a class="btn-line" href="#m-hots">Ver os hots</a>
+    </article>
+    <article class="trio-item" data-reveal>
+      <img class="cutout" src="img/cut/yakisoba.webp" width="526" height="332" loading="lazy" alt="Yakisoba de carne com legumes">
+      <p>Sushi bom em casa: mande seu pedido pelo WhatsApp e a gente entrega os pratos fresquinhos na sua porta.</p>
+      <span class="trio-line" aria-hidden="true"></span>
+      <a class="btn-line" href="https://wa.me/5582991163767">Pedir agora</a>
+    </article>
+    <article class="trio-item" data-reveal>
+      <img class="cutout" src="img/cut/temaki-combo.webp" width="717" height="380" loading="lazy" alt="Temaki de salmão com hots ao lado">
+      <p>No cardápio você encontra temakis em várias versões, crus ou fritos. Confira também as promoções da semana.</p>
+      <span class="trio-line" aria-hidden="true"></span>
+      <a class="btn-line" href="#cardapio">Ver cardápio</a>
+    </article>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="perks" aria-label="Por que pedir no Lounge">
+  <div class="wrap perks-inner">
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-macarico"/></svg><h3>Maçaricado na hora</h3><p>Joys e dragons finalizados no maçarico quando você pede.</p></div>
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-barca"/></svg><h3>Barcas para dividir</h3><p>De 8 a 100 peças, do combinado simples à Barca Lounge.</p></div>
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-poke"/></svg><h3>Monte seu poke</h3><p>Escolha base, duas proteínas, dois molhos e quatro acompanhamentos.</p></div>
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-relogio"/></svg><h3>Almoço e jantar</h3><p>Segunda a sexta das 11h às 15h, e de terça a domingo a partir das 18h.</p></div>
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-moto"/></svg><h3>Delivery</h3><p>Peça qualquer prato do cardápio pelo WhatsApp e receba em casa.</p></div>
+    <div class="perk" data-reveal><svg aria-hidden="true"><use href="#i-promo"/></svg><h3>Promoção toda semana</h3><p>Ofertas novas no Instagram, no almoço e no jantar.</p></div>
+  </div>
+</section>
+
+<!-- DIVISOR -->
+<div class="seal-divider" aria-hidden="true">
+  <span class="birds birds-l"><svg class="b1"><use href="#i-ave"/></svg><svg class="b2"><use href="#i-ave"/></svg><svg class="b3"><use href="#i-ave"/></svg></span>
+  <span class="seal">鮨</span>
+  <span class="birds birds-r"><svg class="b1"><use href="#i-ave"/></svg><svg class="b2"><use href="#i-ave"/></svg><svg class="b3"><use href="#i-ave"/></svg></span>
+</div>
+
+<!-- MAIS PEDIDOS -->
+<section class="favs" id="mais-pedidos">
+  <div class="wrap">
+    <div class="section-title" data-reveal>
+      <h2 class="ruled">Os <span class="red">mais pedidos</span> da casa</h2>
+      <p>Os pratos que mais saem da nossa cozinha. Toque em “Pedir” e a mensagem já vai pronta para o WhatsApp.</p>
+    </div>
+    <div class="favs-grid">
+      <article class="fav" data-reveal>
+        <img src="img/cut/dragon.webp" width="795" height="544" loading="lazy" alt="Temaki Dragon">
+        <div class="fav-body"><h3>Temaki Dragon</h3><p>Cone de salmão maçaricado, recheado com salmão grelhado, camarão e cream cheese.</p>
+        <div class="fav-foot"><span class="price">R$ 70</span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20pedir%20um%20Temaki%20Dragon.">Pedir</a></div></div>
+      </article>
+      <article class="fav" data-reveal>
+        <img src="img/cut/hots-plate.webp" width="450" height="286" loading="lazy" alt="Combinado Hot 20 unidades">
+        <div class="fav-body"><h3>Combinado Hot 20 un</h3><p>5 Philadelphia, 5 Dinamite e 10 Furacão ou Lounge.</p>
+        <div class="fav-foot"><span class="price">R$ 58</span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20pedir%20um%20Combinado%20Hot%2020%20unidades.">Pedir</a></div></div>
+      </article>
+      <article class="fav" data-reveal>
+        <img src="img/cut/salmao.webp" width="595" height="720" loading="lazy" alt="Joys e dragons de salmão">
+        <div class="fav-body"><h3>Lounge Misto 14 un</h3><p>6 dragons, 4 joy negui e 4 joy salmão.</p>
+        <div class="fav-foot"><span class="price">R$ 80</span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20pedir%20um%20Lounge%20Misto%2014%20unidades.">Pedir</a></div></div>
+      </article>
+      <article class="fav" data-reveal>
+        <img src="img/cut/yakisoba.webp" width="526" height="332" loading="lazy" alt="Yakissoba de carne">
+        <div class="fav-body"><h3>Yakissoba de carne</h3><p>Para 1 pessoa ou para 2. Também tem de frango, misto e camarão.</p>
+        <div class="fav-foot"><span class="price">R$ 40 <small>/ 75</small></span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20pedir%20um%20Yakissoba%20de%20carne.">Pedir</a></div></div>
+      </article>
+      <article class="fav" data-reveal>
+        <img src="img/cut/temaki-combo.webp" width="717" height="380" loading="lazy" alt="Combinado Temaki">
+        <div class="fav-body"><h3>Combinado Temaki 8 un</h3><p>1 temaki, 2 niguiri e 5 hots.</p>
+        <div class="fav-foot"><span class="price">R$ 65</span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20pedir%20um%20Combinado%20Temaki.">Pedir</a></div></div>
+      </article>
+      <article class="fav" data-reveal>
+        <img src="img/cut/bowl.webp" width="336" height="274" loading="lazy" alt="Poke montado">
+        <div class="fav-body"><h3>Monte seu poke</h3><p>Bowl de 500 ml com arroz japonês, alface ou bifum e suas proteínas favoritas.</p>
+        <div class="fav-foot"><span class="price small">consulte</span><a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Quero%20montar%20um%20poke.">Pedir</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DUAS COLUNAS -->
+<section class="duo" id="delivery">
+  <div class="wrap duo-inner">
+    <div class="duo-col" data-reveal>
+      <h2 class="ruled">Delivery e salão para sushi fresquinho em São Miguel dos Campos</h2>
+      <p>Venha almoçar ou jantar no Lounge Sushi Bar. Aproveite pratos saborosos e caprichados não só no nosso salão, com balcão de tijolinho e luz quente, mas também no conforto da sua casa. Você pode pedir qualquer prato do cardápio pelo WhatsApp e a gente leva até você.</p>
+    </div>
+    <div class="duo-col" data-reveal>
+      <div class="icon-row" aria-hidden="true">
+        <svg><use href="#i-hot"/></svg><svg><use href="#i-niguiri"/></svg><svg><use href="#i-temaki"/></svg><svg><use href="#i-joy"/></svg><svg><use href="#i-poke"/></svg>
+        <img class="icon-row-logo" src="img/ig-00.jpg" width="150" height="150" alt="">
+      </div>
+      <p>Nossa equipe prepara cada peça na hora. Os combinados vão de 8 a 100 unidades, perfeitos para dividir com a família ou com os amigos. No centro de tudo está o sabor e o bem-estar de quem senta à nossa mesa.</p>
+      <p class="duo-sign">Desejamos uma ótima refeição e bom apetite!</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMO PEDIR -->
+<section class="steps" id="como-pedir">
+  <div class="wrap">
+    <div class="section-title" data-reveal>
+      <h2 class="ruled">Como <span class="red">pedir</span></h2>
+    </div>
+    <ol class="steps-list">
+      <li data-reveal><span class="step-n">1</span><svg aria-hidden="true"><use href="#i-livro"/></svg><h3>Escolha no cardápio</h3><p>Veja todos os pratos e preços aqui embaixo, ou no destaque “Menu” do Instagram.</p></li>
+      <li data-reveal><span class="step-n">2</span><svg aria-hidden="true"><use href="#i-pedido"/></svg><h3>Mande no WhatsApp</h3><p>Fale com a gente no (82) 99116-3767 com o pedido e o endereço de entrega.</p></li>
+      <li data-reveal><span class="step-n">3</span><svg aria-hidden="true"><use href="#i-moto"/></svg><h3>Receba em casa</h3><p>Preparamos tudo na hora e levamos até você. Ou venha comer no salão.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- O SALÃO -->
+<section class="salao" id="salao">
+  <div class="wrap salao-inner">
+    <figure class="salao-a" data-reveal><img src="img/ig-07.jpg" width="361" height="640" loading="lazy" alt="Fachada do Lounge Sushi Bar com letreiro iluminado"><figcaption>A fachada com o letreiro do Lounge</figcaption></figure>
+    <figure class="salao-d" data-reveal><img src="img/ig-01.jpg" width="361" height="640" loading="lazy" alt="Salão do Lounge com as luzes de LED na parede de tijolinho"><figcaption>As luzes na parede do salão</figcaption></figure>
+    <div class="salao-copy" data-reveal>
+      <span class="kanji kanji-salao" aria-hidden="true">店</span>
+      <h2 class="ruled">O <span class="red">salão</span></h2>
+      <p>Balcão de tijolinho, luz quente e mesas para a família toda. Um lugar para o almoço rápido no meio da semana ou para um jantar sem pressa com os amigos.</p>
+      <p>Procure o letreiro com o hashi e o sushi no lugar do “O” de Lounge.</p>
+      <a class="btn-line" href="https://wa.me/5582991163767?text=Ol%C3%A1!%20Qual%20o%20endere%C3%A7o%20do%20Lounge%3F">Perguntar o endereço</a>
+    </div>
+    <figure class="salao-b" data-reveal><img src="img/ig-08.jpg" width="361" height="640" loading="lazy" alt="Balcão de tijolinho do salão"><figcaption>O balcão de tijolinho</figcaption></figure>
+    <figure class="salao-c" data-reveal><img src="img/ig-12.jpg" width="360" height="640" loading="lazy" alt="Bowl sendo finalizado no salão"><figcaption>Finalizando um bowl</figcaption></figure>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="menu" id="cardapio">
+  <div class="seal-divider seal-divider-menu" aria-hidden="true"><span class="seal">品</span></div>
+  <div class="wrap">
+    <div class="menu-head" data-reveal>
+      <h2 class="ruled">Nosso <span class="red">cardápio</span></h2>
+      <p>Preços em reais. Peça no salão ou pelo WhatsApp.</p>
+    </div>
+    <div class="menu-showcase">
+      <figure data-reveal><img src="img/cut/dragon.webp" width="795" height="544" loading="lazy" alt="Temaki Dragon de salmão maçaricado com camarão e cream cheese"><figcaption>Temaki Dragon <b>R$ 70</b></figcaption></figure>
+      <figure data-reveal><img src="img/cut/salmao.webp" width="595" height="720" loading="lazy" alt="Joys e dragons de salmão maçaricado com sashimi"><figcaption>Joy e Dragon <b>a partir de R$ 42</b></figcaption></figure>
+      <figure data-reveal><img src="img/cut/bowl.webp" width="336" height="274" loading="lazy" alt="Poke montado no bowl"><figcaption>Monte seu poke</figcaption></figure>
+    </div>
+
+    <!-- No celular o cardápio vira um livro de verdade (montado pelo main.js) -->
+    <div class="book-wrap" id="bookWrap" hidden>
+      <p class="book-hint"><svg aria-hidden="true"><use href="#i-livro"/></svg> Deslize o dedo para o lado para virar as páginas</p>
+      <div class="book" id="book" aria-roledescription="livro"></div>
+      <div class="book-ctrl">
+        <button type="button" class="book-btn" id="bookPrev" aria-label="Página anterior">‹</button>
+        <span class="book-count" id="bookCount" aria-live="polite">Capa</span>
+        <button type="button" class="book-btn" id="bookNext" aria-label="Próxima página">›</button>
+      </div>
+    </div>
+
+    <nav class="menu-tabs" aria-label="Categorias do cardápio">
+      <a href="#m-combinados">Combinados</a>
+      <a href="#m-hots">Hots</a>
+      <a href="#m-joy-e-dragon">Joy e Dragon</a>
+      <a href="#m-temaki">Temaki</a>
+      <a href="#m-niguiri">Niguiri</a>
+      <a href="#m-hossomaki">Hossomaki</a>
+      <a href="#m-sashimi">Sashimi</a>
+      <a href="#m-entradas">Entradas</a>
+      <a href="#m-pasteis-harumaki">Pastéis Harumaki</a>
+      <a href="#m-yakissoba">Yakissoba</a>
+      <a href="#m-culinaria-chinesa">Culinária chinesa</a>
+      <a href="#m-tepan">Tepan</a>
+      <a href="#m-sobremesa">Sobremesa</a>
+      <a href="#m-monte-seu-poke">Monte seu poke</a>
+    </nav>
+    <div class="menu-cols">
+      <section class="menu-cat" id="m-combinados" aria-labelledby="m-combinados-t">
+        <h3 id="m-combinados-t">Combinados</h3>
+        <p class="menu-note">Só de salmão ou camarão: acréscimo de R$ 25 (Barca do Cheff +40, Barca Especial +50, Barca Lounge +70).</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Hot 20 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 58</span></div><p class="mi-desc">5 Philadelphia, 5 Dinamite e 10 Furacão ou Lounge</p></li>
+          <li><div class="mi-top"><span class="mi-name">Especial Salmão 17 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 65</span></div><p class="mi-desc">5 sashimi, 3 dragon, 4 joy e 5 uramaki</p></li>
+          <li><div class="mi-top"><span class="mi-name">Temaki 8 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 65</span></div><p class="mi-desc">1 temaki, 2 niguiri e 5 hots</p></li>
+          <li><div class="mi-top"><span class="mi-name">Simples 20 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 70</span></div><p class="mi-desc">3 dragon, 3 joy, 4 niguiri, 5 uramaki e 5 hots</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão Grelhado 28 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 73</span></div><p class="mi-desc">10 hots, 10 uramaki e 8 hossomaki</p></li>
+          <li><div class="mi-top"><span class="mi-name">Lounge 25 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 83</span></div><p class="mi-desc">3 sashimi, 3 dragon, 4 niguiri, 5 uramaki, 5 hossomaki e 5 hots</p></li>
+          <li><div class="mi-top"><span class="mi-name">Lounge Especial 30 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 95</span></div><p class="mi-desc">6 sashimi, 4 dragon, 6 joy, 4 niguiri, 5 uramaki e 5 hots</p></li>
+          <li><div class="mi-top"><span class="mi-name">Barca do Cheff 55 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 180</span></div><p class="mi-desc">5 dragon, 6 joy, 6 niguiri, 10 uramaki, 8 hossomaki e 10 hots</p></li>
+          <li><div class="mi-top"><span class="mi-name">Barca Especial do Cheff 70 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 215</span></div><p class="mi-desc">10 sashimi, 10 dragon, 10 joy, 6 niguiri, 10 uramaki, 8 hossomaki, 10 hots e 6 camarão cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Barca Lounge 100 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 280</span></div><p class="mi-desc">15 sashimi, 10 dragon, 10 joy, 10 niguiri, 20 uramaki, 15 hossomaki, 15 hots e 6 camarão cheese</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-hots" aria-labelledby="m-hots-t">
+        <h3 id="m-hots-t">Hots</h3>
+        <p class="menu-note">10 unidades, enrolados e fritos.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Dinamite</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 35</span></div><p class="mi-desc">Alga nori, arroz, patê de salmão grelhado e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Philadelfia</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 39</span></div><p class="mi-desc">Salmão e cream cheese, frito na massa tempurá</p></li>
+          <li><div class="mi-top"><span class="mi-name">Lounge</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 35</span></div><p class="mi-desc">Massa harumaki, salmão grelhado e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Furacão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 38</span></div><p class="mi-desc">Massa harumaki, salmão, kani e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Carioquinha</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 35</span></div><p class="mi-desc">Alga por fora, frito na massa tempurá, recheado com salmão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 43</span></div><p class="mi-desc">Recheio de salmão grelhado e camarão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Hot do Cheff</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 43</span></div><p class="mi-desc">Salmão, camarão e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Nutella</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Massa harumaki, banana e Nutella por cima</p></li>
+          <li><div class="mi-top"><span class="mi-name">Nutella Cheese</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Banana, Nutella e cream cheese por cima</p></li>
+          <li><div class="mi-top"><span class="mi-name">Disquete</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Banana, Disquete e Nutella por cima</p></li>
+          <li><div class="mi-top"><span class="mi-name">Geleia de Pimenta</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 43</span></div><p class="mi-desc">Salmão grelhado coberto com geleia de pimenta</p></li>
+          <li><div class="mi-top"><span class="mi-name">Geleia de Maracujá</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 43</span></div><p class="mi-desc">Salmão grelhado coberto com geleia de maracujá</p></li>
+          <li><div class="mi-top"><span class="mi-name">Doritos</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 43</span></div><p class="mi-desc">Patê de salmão grelhado, cream cheese e Doritos por cima</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-joy-e-dragon" aria-labelledby="m-joy-e-dragon-t">
+        <h3 id="m-joy-e-dragon-t">Joy e Dragon</h3>
+        <p class="menu-note">10 unidades.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Nori Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 42</span></div><p class="mi-desc">Coberto de cream cheese e salmão cru</p></li>
+          <li><div class="mi-top"><span class="mi-name">Nori Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 42</span></div><p class="mi-desc">Coberto de cream cheese e camarão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Enrolado por salmão e coberto com cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Enrolado por salmão, coberto com cream cheese e camarão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Negui</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Enrolado por salmão e coberto com patê de salmão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Pimenta</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cream cheese e geleia de pimenta</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Maracujá</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cream cheese e geleia de maracujá</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Doritos</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cream cheese e Doritos</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Crispy de Couve</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cream cheese e crispy de couve</p></li>
+          <li><div class="mi-top"><span class="mi-name">Joy Crispy de Batata</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cream cheese e crispy de batata</p></li>
+          <li><div class="mi-top"><span class="mi-name">Dragon</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 55</span></div><p class="mi-desc">Camarão e cream cheese enrolados em salmão maçaricado</p></li>
+          <li><div class="mi-top"><span class="mi-name">Lounge Misto 14 un</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 80</span></div><p class="mi-desc">6 dragons, 4 joy negui e 4 joy salmão</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-temaki" aria-labelledby="m-temaki-t">
+        <h3 id="m-temaki-t">Temaki</h3>
+        <p class="menu-note">Qualquer temaki pode ser frito por mais R$ 2.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Temakito</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 35</span></div><p class="mi-desc">Qualquer sabor, exceto dragon</p></li>
+          <li><div class="mi-top"><span class="mi-name">Kani</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Alga nori, arroz, cream cheese, kani e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Skin</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Pele de salmão grelhada e frita, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Misto</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45</span></div><p class="mi-desc">Salmão, kani, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Salmão, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão Grelhado</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45</span></div><p class="mi-desc">Patê de salmão grelhado, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão e Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Salmão, camarão, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Camarão, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Polvo</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Polvo, cream cheese e cebolinha</p></li>
+          <li><div class="mi-top"><span class="mi-name">Dragon</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 70</span></div><p class="mi-desc">Cone de salmão maçaricado, recheado com salmão grelhado, camarão e cream cheese</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-niguiri" aria-labelledby="m-niguiri-t">
+        <h3 id="m-niguiri-t">Niguiri</h3>
+        <p class="menu-note">8 unidades.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Peixe Branco</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 37</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Kani</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 37</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Polvo</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Skin</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 37</span></div><p class="mi-desc">Pele de salmão grelhada frita</p></li>
+          <li><div class="mi-top"><span class="mi-name">Misto</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40</span></div><p class="mi-desc">Até 2 sabores</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-hossomaki" aria-labelledby="m-hossomaki-t">
+        <h3 id="m-hossomaki-t">Hossomaki</h3>
+        <p class="menu-note">8 unidades.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Kani</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 30</span></div><p class="mi-desc">Alga nori por fora, arroz, kani e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 35</span></div><p class="mi-desc">Salmão e cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão Grelhado</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 33</span></div><p class="mi-desc">Patê de salmão grelhado e cream cheese</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-sashimi" aria-labelledby="m-sashimi-t">
+        <h3 id="m-sashimi-t">Sashimi</h3>
+        <p class="menu-note">15 lâminas. Pode escolher 2 ou 3 sabores.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Peixe Branco</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 58</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Kani</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 75</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Polvo</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 73</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Misto</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 75</span></div></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-entradas" aria-labelledby="m-entradas-t">
+        <h3 id="m-entradas-t">Entradas</h3>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Sushiburguer</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 42</span></div><p class="mi-desc">Sabores: kani, misto, salmão, salmão grelhado, salmão e camarão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sushizza</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 44</span></div><p class="mi-desc">Mesmos sabores do sushiburguer</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sushidog</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45</span></div><p class="mi-desc">Mesmos sabores do sushiburguer</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sunomono Simples</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 34</span></div><p class="mi-desc">Pepinos desidratados ao molho do cheff</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sunomono de Kani</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 36</span></div><p class="mi-desc">Com cubos de kani</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sunomono Misto</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Com cubos de salmão, kani e polvo</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sunomono Misto com Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Com cubos de salmão, kani, polvo e camarão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Sunomono de Salmão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 50</span></div><p class="mi-desc">Com cubos de salmão</p></li>
+          <li><div class="mi-top"><span class="mi-name">Ceviche</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Peixe branco, salmão e cebola roxa marinados</p></li>
+          <li><div class="mi-top"><span class="mi-name">Camarão Cheese</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 48</span></div><p class="mi-desc">Camarão empanado com cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Carpaccio</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 60</span></div><p class="mi-desc">Lâminas finas de salmão ao molho do cheff</p></li>
+          <li><div class="mi-top"><span class="mi-name">Polvo na Manteiga</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 65</span></div><p class="mi-desc">Polvo grelhado na manteiga</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-pasteis-harumaki" aria-labelledby="m-pasteis-harumaki-t">
+        <h3 id="m-pasteis-harumaki-t">Pastéis Harumaki</h3>
+        <p class="menu-note">2 unidades.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Queijo Coalho</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 27</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão Grelhado</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 33</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Primavera</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 38</span></div><p class="mi-desc">Carne com legumes</p></li>
+          <li><div class="mi-top"><span class="mi-name">Romeu e Julieta</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 38</span></div><p class="mi-desc">Queijo coalho e goiabada</p></li>
+          <li><div class="mi-top"><span class="mi-name">Nutella e Banana</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 38</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Nutella</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 44</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Camarão Cheese</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45</span></div><p class="mi-desc">Camarão com cream cheese</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-yakissoba" aria-labelledby="m-yakissoba-t">
+        <h3 id="m-yakissoba-t">Yakissoba</h3>
+        <p class="menu-note">1 pessoa / 2 pessoas.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Frango</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 38 / 67</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Carne</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40 / 75</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Misto Frango e Carne</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40 / 70</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Misto Frango, Carne e Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45 / 75</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Camarão</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 45 / 75</span></div></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-culinaria-chinesa" aria-labelledby="m-culinaria-chinesa-t">
+        <h3 id="m-culinaria-chinesa-t">Culinária chinesa</h3>
+        <p class="menu-note">1 pessoa / 2 pessoas. Acompanha arroz yakimeshi.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Frango Xadrez</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 37 / 62</span></div></li>
+          <li><div class="mi-top"><span class="mi-name">Carne Acebolada</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 40 / 70</span></div></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-tepan" aria-labelledby="m-tepan-t">
+        <h3 id="m-tepan-t">Tepan</h3>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Picanha na Chapa</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 150</span></div><p class="mi-desc">Salada oriental, batata frita, arroz e queijo coalho</p></li>
+          <li><div class="mi-top"><span class="mi-name">Salmão na Chapa</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 150</span></div><p class="mi-desc">Arroz e salada oriental</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-sobremesa" aria-labelledby="m-sobremesa-t">
+        <h3 id="m-sobremesa-t">Sobremesa</h3>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Ice Cheese Nutella</span><span class="mi-lead" aria-hidden="true"></span><span class="mi-price">R$ 28</span></div><p class="mi-desc">Sorvete de cream cheese com Nutella e amendoim triturado</p></li>
+        </ul>
+      </section>
+      <section class="menu-cat" id="m-monte-seu-poke" aria-labelledby="m-monte-seu-poke-t">
+        <h3 id="m-monte-seu-poke-t">Monte seu poke</h3>
+        <p class="menu-note">Bowl padrão de 500 ml.</p>
+        <ul class="menu-list">
+          <li><div class="mi-top"><span class="mi-name">Base (1)</span></div><p class="mi-desc">Arroz japonês, alface ou bifum</p></li>
+          <li><div class="mi-top"><span class="mi-name">Proteína (2)</span></div><p class="mi-desc">Salmão, salmão maçaricado, salmão grelhado, kani, camarão, polvo ou peixe branco</p></li>
+          <li><div class="mi-top"><span class="mi-name">Molho (2)</span></div><p class="mi-desc">Tarê, shoyo, geleia de pimenta ou molho de maracujá</p></li>
+          <li><div class="mi-top"><span class="mi-name">Acompanhamentos (4)</span></div><p class="mi-desc">Pepino, milho, cenoura, edamame, cebola roxa, manga, crispy de couve, crispy de batata, amendoim, gengibre, tomate cereja, geleia de gengibre ou cream cheese</p></li>
+          <li><div class="mi-top"><span class="mi-name">Opcional</span></div><p class="mi-desc">Gergelim e cebolinha</p></li>
+        </ul>
+      </section>
+    </div>
+    <p class="menu-cta"><a class="btn-line btn-line-red" href="https://wa.me/5582991163767">Fazer pedido pelo WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- DÚVIDAS -->
+<section class="faq" id="duvidas">
+  <div class="wrap faq-inner">
+    <div class="section-title" data-reveal>
+      <h2 class="ruled">Dúvidas <span class="red">frequentes</span></h2>
+      <p>Não achou sua resposta? Chame a gente no WhatsApp.</p>
+    </div>
+    <div class="faq-list">
+      <details data-reveal><summary>Qual o horário de funcionamento?</summary><p>Almoço de segunda a sexta, das 11h às 15h. Jantar de terça a domingo, a partir das 18h.</p></details>
+      <details data-reveal><summary>Vocês fazem delivery?</summary><p>Sim. É só mandar o pedido pelo WhatsApp (82) 99116-3767 com o seu endereço.</p></details>
+      <details data-reveal><summary>Posso pedir o temaki frito?</summary><p>Pode. Qualquer temaki pode ser frito por mais R$ 2.</p></details>
+      <details data-reveal><summary>Dá para fazer combinado só de salmão ou camarão?</summary><p>Dá. O acréscimo é de R$ 25 nos combinados, R$ 40 na Barca do Cheff, R$ 50 na Barca Especial e R$ 70 na Barca Lounge.</p></details>
+      <details data-reveal><summary>Como funciona o “Monte seu poke”?</summary><p>No bowl de 500 ml você escolhe 1 base, 2 proteínas, 2 molhos e 4 acompanhamentos, com gergelim e cebolinha opcionais.</p></details>
+      <details data-reveal><summary>Onde vejo as promoções?</summary><p>As promoções mudam toda semana e saem primeiro no nosso Instagram, @loungesushii.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="contato">
+  <div class="wrap footer-inner">
+    <div class="foot-col">
+      <h2 class="foot-title">Lounge <span class="red">Sushi</span> Bar</h2>
+      <p>São Miguel dos Campos<br>Alagoas</p>
+      <p>WhatsApp: (82) 99116-3767<br>Instagram: <a href="https://www.instagram.com/loungesushii/">@loungesushii</a></p>
+    </div>
+    <div class="foot-seal" aria-hidden="true"><span class="foot-sun"></span><span class="foot-kanji">寿司</span></div>
+    <div class="foot-col foot-promo" id="promocoes">
+      <h2 class="foot-title">Nossas <span class="red">promoções</span></h2>
+      <div class="promo-row">
+        <p><strong>Esquenta Black</strong><br>Yakisoba individual R$ 30,00<br>Combinado de hots R$ 50,00<br>10 hots dinamite grátis no almoço</p>
+        <img src="img/cut/yakisoba.webp" width="526" height="332" loading="lazy" alt="Yakisoba da promoção Esquenta Black">
+      </div>
+      <a class="more" href="https://www.instagram.com/loungesushii/">Mais promoções <svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+    </div>
+  </div>
+  <div class="footbar">
+    <div class="wrap footbar-inner">
+      <nav aria-label="Rodapé"><a href="#cardapio">Cardápio</a><a href="#como-pedir">Como pedir</a><a href="#duvidas">Dúvidas</a><a href="https://www.instagram.com/loungesushii/">Instagram</a></nav>
+      <p>© 2026 Lounge Sushi Bar · São Miguel dos Campos/AL</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5582991163767" aria-label="Pedir pelo WhatsApp"><svg aria-hidden="true"><use href="#i-whats"/></svg></a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="main.js?v=51"></script>
+</body>
+</html>
